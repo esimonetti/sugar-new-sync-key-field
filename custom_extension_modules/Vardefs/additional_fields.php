@@ -1,9 +1,9 @@
 <?php
 
 $additionalInfo = [
-    'name' => 'int_1_key',
-    'label' => 'LBL_INTEGRATION_1_KEY',
-    'comment' => 'Integration 1 Key',
+    'name' => 'sync_key',
+    'label' => 'LBL_SYNC_KEY',
+    'comment' => 'External default id of the remote integration record',
 ];
 
 $dictionary['{OBJECTNAME}']['fields'][$additionalInfo['name']]['name'] = $additionalInfo['name'];
