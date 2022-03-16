@@ -44,6 +44,6 @@ $db = \DBManagerFactory::getInstance();
 $idxName = strtolower('{MODULENAME}');
 $dictionary['{OBJECTNAME}']['indices'][] = [
     'name' => $db->getValidDBName('idx_' . $idxName . '_' . $fieldName),
-    'type' => 'unique',
+    'type' => 'index', // changed from unique to index
     'fields' => [$fieldName],
 ];
