@@ -1,39 +1,36 @@
 <?php
 
-$additionalInfo = [
-    'name' => 'int_1_key',
-    'label' => 'LBL_INTEGRATION_1_KEY',
-    'comment' => 'Integration 1 Key',
-];
+$fieldName = 'integration1_id';
 
-$dictionary['{OBJECTNAME}']['fields'][$additionalInfo['name']]['name'] = $additionalInfo['name'];
-$dictionary['{OBJECTNAME}']['fields'][$additionalInfo['name']]['vname'] = $additionalInfo['label'];
-$dictionary['{OBJECTNAME}']['fields'][$additionalInfo['name']]['is_sync_key'] = true;
-$dictionary['{OBJECTNAME}']['fields'][$additionalInfo['name']]['type'] = 'varchar';
-$dictionary['{OBJECTNAME}']['fields'][$additionalInfo['name']]['enforced'] = '';
-$dictionary['{OBJECTNAME}']['fields'][$additionalInfo['name']]['dependency'] = '';
-$dictionary['{OBJECTNAME}']['fields'][$additionalInfo['name']]['required'] = false;
-$dictionary['{OBJECTNAME}']['fields'][$additionalInfo['name']]['massupdate'] = false;
-$dictionary['{OBJECTNAME}']['fields'][$additionalInfo['name']]['readonly'] = true;
-$dictionary['{OBJECTNAME}']['fields'][$additionalInfo['name']]['default'] = null;
-$dictionary['{OBJECTNAME}']['fields'][$additionalInfo['name']]['isnull'] = true;
-$dictionary['{OBJECTNAME}']['fields'][$additionalInfo['name']]['no_default'] = false;
-$dictionary['{OBJECTNAME}']['fields'][$additionalInfo['name']]['comments'] = $additionalInfo['comment'];
-$dictionary['{OBJECTNAME}']['fields'][$additionalInfo['name']]['help'] = '';
-$dictionary['{OBJECTNAME}']['fields'][$additionalInfo['name']]['importable'] = 'true';
-$dictionary['{OBJECTNAME}']['fields'][$additionalInfo['name']]['duplicate_merge'] = 'disabled';
-$dictionary['{OBJECTNAME}']['fields'][$additionalInfo['name']]['merge_filter'] = 'disabled';
-$dictionary['{OBJECTNAME}']['fields'][$additionalInfo['name']]['duplicate_on_record_copy'] = 'no';
-$dictionary['{OBJECTNAME}']['fields'][$additionalInfo['name']]['audited'] = true;
-$dictionary['{OBJECTNAME}']['fields'][$additionalInfo['name']]['reportable'] = true;
-$dictionary['{OBJECTNAME}']['fields'][$additionalInfo['name']]['unified_search'] = false;
-$dictionary['{OBJECTNAME}']['fields'][$additionalInfo['name']]['calculated'] = false;
-$dictionary['{OBJECTNAME}']['fields'][$additionalInfo['name']]['len'] = '100';
-$dictionary['{OBJECTNAME}']['fields'][$additionalInfo['name']]['size'] = '20';
-$dictionary['{OBJECTNAME}']['fields'][$additionalInfo['name']]['studio'] = [
+$dictionary['{OBJECTNAME}']['fields'][$fieldName]['name'] = $fieldName;
+$dictionary['{OBJECTNAME}']['fields'][$fieldName]['vname'] = 'LBL_INTEGRATION1_ID';
+$dictionary['{OBJECTNAME}']['fields'][$fieldName]['comments'] = 'Integration 1 ID';
+
+$dictionary['{OBJECTNAME}']['fields'][$fieldName]['is_sync_key'] = true;
+$dictionary['{OBJECTNAME}']['fields'][$fieldName]['type'] = 'varchar';
+$dictionary['{OBJECTNAME}']['fields'][$fieldName]['enforced'] = '';
+$dictionary['{OBJECTNAME}']['fields'][$fieldName]['dependency'] = '';
+$dictionary['{OBJECTNAME}']['fields'][$fieldName]['required'] = false;
+$dictionary['{OBJECTNAME}']['fields'][$fieldName]['massupdate'] = false;
+$dictionary['{OBJECTNAME}']['fields'][$fieldName]['readonly'] = true;
+$dictionary['{OBJECTNAME}']['fields'][$fieldName]['default'] = null;
+$dictionary['{OBJECTNAME}']['fields'][$fieldName]['isnull'] = true;
+$dictionary['{OBJECTNAME}']['fields'][$fieldName]['no_default'] = false;
+$dictionary['{OBJECTNAME}']['fields'][$fieldName]['help'] = '';
+$dictionary['{OBJECTNAME}']['fields'][$fieldName]['importable'] = 'true';
+$dictionary['{OBJECTNAME}']['fields'][$fieldName]['duplicate_merge'] = 'enabled'; // changed to enabled
+$dictionary['{OBJECTNAME}']['fields'][$fieldName]['merge_filter'] = 'disabled';
+$dictionary['{OBJECTNAME}']['fields'][$fieldName]['duplicate_on_record_copy'] = 'no';
+$dictionary['{OBJECTNAME}']['fields'][$fieldName]['audited'] = true;
+$dictionary['{OBJECTNAME}']['fields'][$fieldName]['reportable'] = true;
+$dictionary['{OBJECTNAME}']['fields'][$fieldName]['unified_search'] = false;
+$dictionary['{OBJECTNAME}']['fields'][$fieldName]['calculated'] = false;
+$dictionary['{OBJECTNAME}']['fields'][$fieldName]['len'] = '100';
+$dictionary['{OBJECTNAME}']['fields'][$fieldName]['size'] = '20';
+$dictionary['{OBJECTNAME}']['fields'][$fieldName]['studio'] = [
     'recordview' => true,
     'wirelessdetailview' => true,
-    'listview' => false,
+    'listview' => true, // changed to true
     'wirelesseditview' => false,
     'wirelesslistview' => false,
     'wireless_basic_search' => false,
@@ -46,7 +43,7 @@ $dictionary['{OBJECTNAME}']['fields'][$additionalInfo['name']]['studio'] = [
 $db = \DBManagerFactory::getInstance();
 $idxName = strtolower('{MODULENAME}');
 $dictionary['{OBJECTNAME}']['indices'][] = [
-    'name' => $db->getValidDBName('idx_' . $idxName . '_' . $additionalInfo['name']),
+    'name' => $db->getValidDBName('idx_' . $idxName . '_' . $fieldName),
     'type' => 'unique',
-    'fields' => [$additionalInfo['name']],
+    'fields' => [$fieldName],
 ];
