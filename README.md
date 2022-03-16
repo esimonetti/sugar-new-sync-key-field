@@ -5,7 +5,12 @@ This template creates an installable package containing a new field (`integratio
 
 ## Build and Installation Instructions
 * Clone the repository and enter the cloned directory
-* Edit `configuration/manifest.php`, `configuration/templates.php`, `custom_extension_modules/Vardefs/additional_fields.php` and `custom_extension_modules/Language/en_us.additional_fields.lang.php` to suit the specific needs
+* Edit the following files, to suit the specific needs
+  * `configuration/manifest.php`
+  * `configuration/templates.php`
+  * `custom_extension_modules/Vardefs/additional_fields.php`
+  * `custom_extension_modules/Language/en_us.additional_fields.lang.php`
+  * `src/custom/logichooks/application/afterDeleteRemoveAdditionalFields.php`
 * Retrieve the Sugar Module Packager dependency by running either `composer install` or `docker run --rm --interactive --tty --volume $PWD:/app composer install`
 * Generate the installable .zip Sugar module within the `releases` directory with either ``./vendor/bin/package `cat version` `` or ``./vendor/bin/package-docker `cat version` ``
 * Install the generated module into the instance
