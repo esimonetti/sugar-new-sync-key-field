@@ -1,7 +1,7 @@
 # Upsert additional sync_key fields
 This Sugar module loadable package is a template to help add new sync_key type fields for the upsert api. It is useful to create multiple integrations external reference fields to the same record, when a single sync_key field is not enough.
 
-This template creates an installable package containing a new field (`int_1_key`) for `Contacts` and `Accounts` modules.
+This template creates an installable package containing a new field (`integration1_id`) for `Contacts` and `Accounts` modules.
 
 ## Build and Installation Instructions
 * Clone the repository and enter the cloned directory
