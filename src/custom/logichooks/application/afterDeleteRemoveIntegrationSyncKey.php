@@ -1,14 +1,16 @@
 <?php
 
-class afterDeleteRemoveAdditionalFields
+class afterDeleteRemoveIntegrationSyncKey
 {
-    public function removeAdditionalFields($bean, $event, $arguments)
+    protected $syncKeyField = 'integration1_id';
+
+    public function removeSyncKey($bean, $event, $arguments)
     {
         // after delete, make the field null if it is there
-        if (isset($bean->integration1_id)) {
+        if (isset($bean->{$this->syncKeyField})) {
             $qb = \DBManagerFactory::getConnection()->createQueryBuilder();
             $qb->update($bean->table_name)
-                ->set('integration1_id', $qb->createPositionalParameter(null))
+                ->set($this->syncKeyField, $qb->createPositionalParameter(null))
                 ->where($qb->expr()->eq('id', $qb->createPositionalParameter($bean->id)))
                 ->execute();
         }

@@ -1,11 +1,11 @@
 <?php
 
 $fieldName = 'integration1_id';
+$fieldLabel = 'LBL_INTEGRATION1_ID';
 
 $dictionary['{OBJECTNAME}']['fields'][$fieldName]['name'] = $fieldName;
-$dictionary['{OBJECTNAME}']['fields'][$fieldName]['vname'] = 'LBL_INTEGRATION1_ID';
-$dictionary['{OBJECTNAME}']['fields'][$fieldName]['comments'] = 'Integration 1 ID';
-
+$dictionary['{OBJECTNAME}']['fields'][$fieldName]['comments'] = $fieldName;
+$dictionary['{OBJECTNAME}']['fields'][$fieldName]['vname'] = $fieldLabel;
 $dictionary['{OBJECTNAME}']['fields'][$fieldName]['is_sync_key'] = true;
 $dictionary['{OBJECTNAME}']['fields'][$fieldName]['type'] = 'varchar';
 $dictionary['{OBJECTNAME}']['fields'][$fieldName]['enforced'] = '';
